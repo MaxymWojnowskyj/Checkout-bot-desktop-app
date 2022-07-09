@@ -1,0 +1,40 @@
+* {
+	outline: none;
+}
+body {
+	background-color: #26223d;
+}
+#captcha-back-img {
+	position: absolute;
+	top: 25%;
+	left: 27%;
+	height: 38%;
+	width: 45%;
+}
+#btns-div-captcha {
+	position: fixed;
+	top: 88%;
+	height: 12%;
+	width: 110%;
+	margin-left: -10%; 
+	background-color: #221d3a;
+	text-align: center;
+}
+.captcha-btn {
+	margin-top: 4%;
+	margin-left: 3%;
+	height: 40%;
+	width: 25%;
+	font-size: 10px;
+	color: white;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  	background-color: #26223d;
+  	border: none;
+}
+#captcha-name {
+	margin-left: 5.5%;
+	padding-left: 10px;
+}
+#captcha-name::placeholder {
+	color: white;
+}

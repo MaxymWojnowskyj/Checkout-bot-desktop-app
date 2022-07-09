@@ -1,0 +1,302 @@
+* {
+	outline: none;
+}
+#table-div {
+	position: absolute;
+	top: 10%;
+	left: 1%;
+	height: 80%;
+	width: 92.5%;
+	text-align: center;	
+}
+.table-div {
+	max-height: 105%;
+	overflow:auto;
+	overflow-y: auto;
+}
+#task-table {
+	width: 100%;
+	margin-left: 0%;
+	border-collapse: separate;
+	color: white;
+	font-size: 11px;
+	font-weight: lighter;
+	font-family: 'Montserrat', sans-serif;
+	border-spacing: 0 10px;
+}
+
+#task-table thead tr {
+	background-color: var(--main-child-colour);
+	height: 30px;
+}
+#task-table tbody tr {
+	background-color: var(--main-child-colour);
+	height: 25px;
+}
+#task-table td {
+	text-align: center;
+	max-width: 100px;
+	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+}
+
+#task-table tr td:first-child { 
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px; 
+}
+#task-table tr td:last-child { 
+  border-top-right-radius: 5px; 
+  border-bottom-right-radius: 5px;
+}
+.runBtn, .stopBtn, .editBtn, .removeBtn {
+	height: 25px;
+	width: 25px;
+	border: none;
+	background-color: transparent;
+
+
+	font-weight: bolder;
+	color: white;
+	margin: 0 auto;
+}
+.runBtn {
+	margin-right: 5px;
+}
+.stopBtn {
+}
+
+.actions-img {
+	width: 20.1px;
+  	height: 20px;
+  	object-fit: contain;
+}
+.actions-img-play {
+	width: 23.1px;
+  	height: 23px;
+  	object-fit: contain;
+}
+.task-log:hover {
+	background-color: #443d67;
+}
+.tasks-btn {
+	height: 28px;
+	width: 100px;
+	background-color: transparent;
+	border-radius: 3px;
+	border: 1px solid var(--child-child-colour);
+	color: var(--child-child-colour);
+}
+.tasks-btn:hover {
+	color: white;
+	background-color: var(--child-child-colour);
+}
+.tasks-input {
+	border: none;
+	border-radius: 6px;
+	height: 10%;
+	width: 25%;
+	background-color: var(--main-bg-colour);
+	color: white;
+	padding-left: 10px;
+}
+.tasks-input::placeholder {
+	color: grey;
+}
+.add-tasks-input {
+	margin-top: .5%;
+	margin-bottom: 3%;
+	margin-right: 5%;
+	border: none;
+	border-radius: 6px;
+	height: 11%;
+	width: 27%;
+	background-color: var(--main-bg-colour);
+	color: white;
+	padding-left: 10px;
+}
+#site {
+	margin-left: 2.5%;
+}
+#itemUrl {
+	margin-left: 2.5%;
+}
+#PosKeywrd {
+	margin-left: 2.5%;
+}
+#negKeywrd {
+	margin-left: 2.5%;
+}
+#error {
+	margin-left: 2.5%;
+}
+#category {
+	margin-left: 2.5%;
+}
+#checkoutDelay {
+	margin-left: -63.5%;
+}
+.add-tasks-input::placeholder {
+	color: white;
+}
+.taskBtnsDiv {
+	width: 100%;
+	text-align: center;
+}
+#refresh-tasks {
+	position: absolute;
+	width: 2.5%;
+	left: 0%;
+}
+#massEditTasks {
+	margin-left: -30%;
+	margin-right: 2%;
+}
+#captchaTasks {
+	margin-right: 25%;
+}
+#addTaskBtn {
+	margin-right: 2%;
+}
+#runAllTasks {
+	color: #12b579;
+	border: 1px solid #12b579;
+	margin-right: 2%;
+}
+#runAllTasks:hover {
+	color: white;
+	background-color: #12b579;
+}
+
+#stopAllTasks {
+	color: #ffd167;
+	border: 1px solid #ffd167;
+	margin-right: 2%;
+}
+#stopAllTasks:hover {
+	color: white;
+	background-color: #ffd167;
+}
+#deleteAllTasks {
+	color: #ff7777;
+	border: 1px solid #ff7777;
+	margin-right: -30%;
+}
+#deleteAllTasks:hover {
+	color: white;
+	background-color: #ff7777;
+}
+#editAllTasks {
+	margin-right: 2%;
+}
+#saveTaskBtn {
+	height: 15%;
+	width: 20%;
+	margin-top: 0%;
+	margin-left: 6%;
+}
+#reSaveTask {
+	display: none;
+	margin-left: 35%;
+	margin-right: 0%;
+	margin-top: -9%;
+	height: 10%;
+	width: 27%;
+}
+#closeTaskBtn {
+	height: 22%;
+	width: 20%;
+	margin-top: 5.5%;
+	margin-left: 0%;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+  background-color: var(--main-child-colour);
+  margin: 12% auto;
+  padding: 20px;
+  border: none;
+  width: 50%;
+  height: 50%;
+}
+.mass-modal-content {
+	background-color: var(--main-child-colour);
+  	margin: 12% auto;
+  	padding: 20px;
+  	border: none;
+  	width: 30%;
+  	height: 20%;
+}
+#saveTaskBtn {
+	display: block;
+	height: 12%;
+	width: 27%;
+	position: relative;
+	top: -18%;
+	left: 29%;
+	border: 1px solid var(--child-child-colour);
+	color: var(--child-child-colour);
+}
+#saveTaskBtn:hover {
+	background-color: var(--child-child-colour);
+	color: white;
+}
+
+#closeTaskBtn {
+	height: 4.8%;
+	width: 13.5%;
+	position: absolute;
+	top: 58.7%;
+	left: 59%;
+	border: 1px solid var(--child-child-colour);
+	color: var(--child-child-colour);
+}
+#closeTaskBtn:hover {
+	background-color: var(--child-child-colour);
+	color: white;
+}
+#mass-monitor {
+	margin-top: 1%;
+	margin-left: 2%;
+	height: 23%;
+	width: 85%;
+}
+#mass-monitor::placeholder {
+	color: grey;
+}
+#mass-color {
+	margin-top: 1%;
+	margin-left: 2%;
+	height: 23%;
+	width: 30%;
+}
+#mass-color::placeholder {
+	color: grey;
+}
+#mass-size {
+	height: 23%;
+	width: 30%;
+}
+#mass-size::placeholder {
+	color: grey;
+}
+#saveMassEdit {
+	margin-top: 1%;
+	margin-left: -3%;
+	margin-right: 8%;
+	width: 28%;
+}
+#closeMassEdit {
+	width: 28%;
+}
