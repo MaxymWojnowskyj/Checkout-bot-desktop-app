@@ -1,0 +1,508 @@
+<html>
+<head>
+	<title>unamed app</title>
+	<link rel="stylesheet" href="./css/main.css">  
+</head>
+<body>
+
+    <div id="header-tab">
+        <button id="minimize-button" class="headerBtn">
+            <img class="header-img" src="./images/minimize.png"></img>
+        </button>
+        <button id="min-max-button" class="headerBtn">
+            <img class="header-img" src="./images/maximize.png"></img>
+        </button>
+        <button id="close-app-button" class="headerBtn">
+            <img class="header-img" src="./images/close-app.png"></img>
+        </button>
+    </div>
+
+	<div class="menu">
+        <img src="./images/logo.png" class="logo"></img>
+
+        <nav>
+            <ul class="nav">
+                <li class="active" data-target="tasks-page">
+                    <img src="images/taskMenu-active.png" class="menu-img"></img>
+                </li>
+                
+                <li data-target="proxies-page">
+                    <img src="images/proxyMenu.png" class="menu-img">
+                </li>
+
+                <li data-target="profile-page">
+                    <img src="images/profileMenu.png" class="menu-img">
+                </li>
+
+                <li data-target="settings-page">
+                    <img src="images/settingMenu.png" class="menu-img">
+                </li>
+            </ul>
+        </nav>
+
+        <div id="tasks-page" class="content active">
+        	<head>
+                <link rel="stylesheet" href="./css/tasks.css"> 
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+            </head>   
+            <body>
+
+                <div id="table-div">
+                     <div class="taskBtnsDiv">
+                        <!--<button id="refresh-tasks" class="tasks-btn">R</button>-->
+                        <button id="massEditTasks" class="tasks-btn">Mass Edit</button>
+                        <button id="captchaTasks" class="tasks-btn">Captcha</button>
+                        <button id="addTaskBtn" class="tasks-btn">Create</button>
+                        <button id="runAllTasks" class="tasks-btn">Start All</button>
+                        <button id="stopAllTasks" class="tasks-btn">Stop All</button>
+                        <button id="deleteAllTasks" class="tasks-btn">Clear All</button>
+                    </div>
+                    <div class="table-div">
+                        <table id="task-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Site</th>
+                                    <th>Size</th>
+                                    <th>Product</th>
+                                    <th>Color</th>
+                                    <th>Billing</th>
+                                    <th>Proxies</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="massEditModal" class="modal">
+                    <div class="mass-modal-content">
+                        <input id="mass-monitor" class="add-tasks-input" placeholder="Product (+pos,-neg,-neg2 or https)"></input>
+                        <input id="mass-color" class="add-tasks-input" placeholder="Color"></input>
+                        <input id="mass-size" class="add-tasks-input" placeholder="Size"></input>
+
+                        <button id="saveMassEdit" class="tasks-btn">Save Edit</button>
+                        <button id="closeMassEdit" class="tasks-btn">Cancel</button>
+                    </div>
+                </div>
+
+                <div id="addTaskModal" class="modal">
+                    <div class="modal-content">
+                        <select id="site" class="add-tasks-input">
+                            <optgroup label="Supreme">
+                                <option value="Supreme">Supreme</option>
+                            </optgroup>
+                        </select>
+
+                        <select id="size" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Size</option>
+                            <optgroup label="Clothes">
+                                <option value="Small">Small</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Large">Large</option>
+                                <option value="XLarge">XLarge</option>
+                                <option value="One Size">One Size</option>
+                            </optgroup>
+                            <optgroup label="Shoes">
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                                <option value="13">13</option>
+                                <option value="14">14</option>
+                            </optgroup>
+                        </select>
+
+                        <select id="profile" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Profile</option>
+                        </select>
+
+                        <input id="itemUrl" class="add-tasks-input" placeholder="URL"></input>
+
+                        <select id="anysize" class="add-tasks-input">
+                            <option value="Enabled">AnySize Enabled</option>
+                            <option value="Disabled">AnySize Disabled</option>
+                        </select>
+
+                        <select id="proxy" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Proxy</option>
+                            <option value="proxy fill">Proxy Fill</option>
+                            <option value="localhost">LocalHost</option>
+                        </select>
+
+                        <input id="PosKeywrd" class="add-tasks-input" placeholder="Positive"></input>
+
+                        <input id="color" class="add-tasks-input" placeholder="Color"></input>
+                        <select id=anycolor class="add-tasks-input">
+                            <option value="Enabled">AnyColor Enabled</option>
+                            <option value="Disabled">AnyColor Disabled</option>
+                        </select> 
+
+
+                        <input id="negKeywrd" class="add-tasks-input" placeholder="Negative"></input>
+
+                        <input type="date" id="date" placeholder="dd/mm/yy" class="add-tasks-input"></input>
+
+                        <input type="time" id="time" step="1" class="add-tasks-input"></input>  
+
+                        <select id="category" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Category</option>
+                            <option value="new">new</option>
+                            <option value="Tops/Sweaters">Tops/Sweaters</option>
+                            <option value="T-Shirts">T-Shirts</option>
+                            <option value="Sweatshirts">Sweatshirts</option>
+                            <option value="Skate">Skate</option>
+                            <option value="Shoes">Shoes</option>
+                            <option value="Shirts">Shirts</option>
+                            <option value="Pants">Pants</option>
+                            <option value="Jackets">Jackets</option>
+                            <option value="Hats">Hats</option>
+                            <option value="Bags">Bags</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                        <select id="jsonType" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Json Stock</option>
+                            <option value="shop">Regular</option>
+                            <option value="mobile_stock">Mobile</option>
+                        </select>
+ 
+                       
+                        <select id="taskMode" class="add-tasks-input">
+                            <option value="" selected disabled hidden>Task Mode</option>
+                            <option value="Request">Request</option>
+                            <!--<option value="Headless">Headless</option>-->
+                        </select>
+
+                        <input id="checkoutDelay" class="add-tasks-input" type="number" placeholder="Checkout Delay ms"></input>
+                        <!--<input id="task-quantity" class="tasks-input" type="number" placeholder="tasks"></input>-->
+                        
+                        <button id="saveTaskBtn" class="tasks-btn">Save</button>
+                        <button id="reSaveTask" class="tasks-btn">ReSave</button>
+                        <button id="closeTaskBtn" class="tasks-btn">Cancel</button>
+                    </div>
+                </div>
+
+
+            	<script src="./js/tasks.js"></script>
+            </body>
+        </div>
+
+        <div id="proxies-page" class="content remove">
+            <head>
+                <link rel="stylesheet" href="./css/proxies.css"> 
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+            </head>   
+            <body>
+
+                <textarea id="proxies_input" placeholder="IP:Port:Username:Password" wrap="off"></textarea>
+                <button id="saveProxies" class="tasks-btn">Add</button>
+
+                <!--
+                <select id="website" class="tasks-input">
+                    <option value="https://supremenewyork.com">Supreme</option>
+                    <option value="https://google.com">Google</option>
+                </select>
+                -->
+                <div id="proxy-table-div">
+                    <div class="taskBtnsDiv">
+                        <button id="runAllProxies" class="tasks-btn">Start All</button>
+                        <button id="deleteAllProxies" class="tasks-btn">Delete All</button>
+                        <button id="removeFailedProxies" class="tasks-btn">Remove Failed</button>
+                        <button id="importProxies" class="tasks-btn">Import</button>
+                        <!--<button id="exportProxies" class="tasks-btn">Export All</button>-->
+                    </div>
+                    <div class="table-div">
+                        <table id="proxy-table">
+                            <thead>
+                                <tr>
+                                    <th>Ip</th>
+                                    <th>Port</th>
+                                    <th>Username</th>
+                                    <th>Password</th>
+                                    <th>Log</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+
+
+                <script src="./js/proxies.js"></script>
+            </body>
+        </div>
+
+        <div id="profile-page" class="content remove">
+            <head>
+                <link rel="stylesheet" href="./css/profile.css"> 
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+            </head>   
+            <body>
+                <div id="billing-div">
+                    <input id="profileName" class="tasks-input billing" placeholder="Profile Name"></input>
+                    <input id="name" class="tasks-input billing" placeholder="Name"></input>
+
+                    <input id="num" class="tasks-input billing" placeholder="Card Number"></input>
+
+                    <input id="address" class="tasks-input billing" placeholder="Address"></input>
+
+                    <select id="expM" class="tasks-input billing">
+                        <option value="" selected disabled hidden>MM</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select id="expY" class="tasks-input billing">
+                        <option value="" selected disabled hidden>YY</option>
+                        <option value="2020">20</option>
+                        <option value="2021">21</option>
+                        <option value="2022">22</option>
+                        <option value="2023">23</option>
+                        <option value="2024">24</option>
+                        <option value="2025">25</option>
+                        <option value="2026">26</option>
+                        <option value="2027">27</option>
+                        <option value="2028">28</option>
+                        <option value="2029">29</option>
+                        <option value="2030">30</option>
+                        <option value="2031">31</option>
+                    </select>
+                    <input id="CVV" class="tasks-input billing" placeholder="CVV"></input>
+                    <input id="apt" class="tasks-input billing" placeholder="Apt"></input>
+
+                    <input id="cardName" class="tasks-input billing" placeholder="Card Holder Name"></input>
+
+                    <input id="city" class="tasks-input billing" placeholder="City"></input>
+
+                    <input id="email" class="tasks-input billing" placeholder="Email"></input>
+
+                    <select id="state" class="tasks-input billing">
+                        <option value="" selected disabled hidden>State</option>
+                        <optgroup label="United States">
+                            <option value="AL">AL</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AS">AS</option>
+                            <option value="AZ">AZ</option>
+                            <option value="AR">AR</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DE">DE</option>
+                            <option value="DC">DC</option>
+                            <option value="FM">FM</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="GU">GU</option>
+                            <option value="HI">HI</option>
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="IA">IA</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="ME">ME</option>
+                            <option value="MH">MH</option>
+                            <option value="MD">MD</option>
+                            <option value="MA">MA</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MS">MS</option>
+                            <option value="MO">MO</option>
+                            <option value="MT">MT</option>
+                            <option value="NE">NE</option>
+                            <option value="NV">NV</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NY">NY</option>
+                            <option value="NC">NC</option>
+                            <option value="ND">ND</option>
+                            <option value="MP">MP</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PW">PW</option>
+                            <option value="PA">PA</option>
+                            <option value="PR">PR</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VI">VI</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WV">WV</option>
+                            <option value="WI">WI</option>
+                            <option value="WY">WY</option>
+                        </optgroup>
+                        <optgroup label="Canada">
+                            <option value="AB">AB</option>
+                            <option value="BC">BC</option>
+                            <option value="MB">MB</option>
+                            <option value="NB">NB</option>
+                            <option value="NL">NL</option>
+                            <option value="NT">NT</option>
+                            <option value="NS">NS</option>
+                            <option value="NU">NU</option>
+                            <option value="ON">ON</option>
+                            <option value="PE">PE</option>
+                            <option value="QC">QC</option>
+                            <option value="SK">SK</option>
+                            <option value="YT">YT</option>
+                        </optgroup>
+                    </select>
+
+                    <input id="phone" class="tasks-input billing" placeholder="Phone Number"></input>
+
+                    <select id="country" class="tasks-input billing">
+                        <option value="" selected disabled hidden>Country</option>
+                        <option value="United States">USA</option>
+                        <option value="Canada">Canada</option>
+                    </select>
+
+                    <button id="reSave" class="tasks-btn billing">reSave</button>
+                    <button id="createBill" class="tasks-btn billing">Create</button>
+                    <input id="zip" class="tasks-input billing" placeholder="Zip Code"></input>
+
+                </div>
+                <div id="profiles-div" class="table-div">
+                    <table id="profiles-table">
+                        <thead>
+                            <tr>
+                                <th>Profile Name</th>
+                                <th>Email</th>
+                                <th>Card Holder Name</th>
+                                <th>Card</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    
+                </div>
+                <script src="./js/profile.js"></script>
+            </body>
+        </div>
+
+        <div id="settings-page" class="content remove">
+            <head>
+                <link rel="stylesheet" href="./css/settings.css"> 
+                <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+            </head>   
+            <body id="settings-body">
+                <label id="settings-main" class="settings-label">Settings</label>
+                <button id="deactivate" class="tasks-btn">Deactivate</button>
+                <div id="main-div" class="settings-div">
+                    <div id="div1" class="child-settings-div">
+                        <label id="delays-label" class="settings-label">Delays</label>
+                        <label for="monitor" class="settings-label">Monitor</label>
+                        <input id="monitor" class="tasks-input"type="number" value="3000" placeholder="0000ms"></input>
+                        <label for="retry" class="settings-label">Retry</label>
+                        <input id="retry" class="tasks-input"type="number" value="3000" placeholder="0000ms"></input>
+                        <!--
+                        <button id="save-delays" class="tasks-btn">Save</button>
+                        <button id="clear-delays" class="tasks-btn">Clear</button>
+                        -->
+                    </div>
+                    <div id="div2" class="child-settings-div">
+                        
+                        <label id="notifications" class="settings-label">Notifications</label>
+                        <!--
+                        <label id="sound"class="settings-slider"> 
+                        <input type="checkbox" id="sound_slider">
+                        <span id="sound-slider" class="slider"></span>
+                        </label>
+                        <label id="sound-label" class="settings-label">Sound</label>
+
+                        <label class="settings-slider"> 
+                        <input type="checkbox" id="screen_slider">
+                        <span id="screen-slider" class="slider"></span>
+                        </label>
+                        <label id="screen-label" class="settings-label">Screen</label>
+
+                        <label class="settings-slider"> 
+                        <input type="checkbox" id="captcha_slider">
+                        <span id="captcha-slider" class="slider"></span>
+                        </label>
+                        <label id="captcha-label" class="settings-label">Captcha</label>
+                        -->
+                        <select id="sound" class="tasks-input">
+                            <option value="Enabled">Sound Enabled</option>
+                            <option value="Disabled">Sound Disabled</option>
+                        </select>
+
+                        <select id="screen" class="tasks-input">
+                            <option value="Enabled">Screen Enabled</option>
+                            <option value="Disabled">Screen Disabled</option>
+                        </select>
+                        <!--
+                        <select id="captcha" class="tasks-input">
+                            <option value="Enabled">Captcha Enabled</option>
+                            <option value="Disabled">Captcha Disabled</option>
+                        </select>
+                        -->
+                    </div>
+                    
+                </div>
+
+                <div id="second-div" class="settings-div">
+                    <label id="webhook-label" class="settings-label">Discord Webhook</label>
+                    <input id="webhook" class="tasks-input" placeholder="https://discordapp.com/webhook/api/......."></input>
+                    
+                    <button id="save-webhook" class="tasks-btn">Save Hook</button>
+                    <button id="clear-webhook" class="tasks-btn">Clear Hook</button>
+
+                    <button id="secretBtn" style="background-color: transparent; border: none;"></button>
+                    <!--style="display: none"-->
+
+                    <div id="secretModal" class="modal">
+                        <div class="secret-modal-content">
+                            <span class="close">&times;</span>
+                            <h3 id="congrats">Congrats on finding the easter egg, why were you clicking there...</h3>
+
+                            <h5 style="color: white">HEHE</h5>
+                            <p><a id="oh-no" href="https://youtu.be/dQw4w9WgXcQ">https://click-me.com</a></p>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <script src="./js/settings.js"></script>
+            </body>
+        </div>
+
+    </div>
+
+	<script src="./js/main.js"></script>
+    <script src="./js/supreme.js"></script>
+
+    <!--
+    <script>require("./node_modules/fuse.js/dist/fuse.js")</script>
+    <script>require("./js/backgroundfileName.js")</script>
+    <script>require("./js/backgroundfileName2.js")</script>
+    etc...
+    -->
+</body>
+</html>

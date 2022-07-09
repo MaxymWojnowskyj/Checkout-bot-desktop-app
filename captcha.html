@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Captcha</title>
+	<link rel="stylesheet" href="./css/captcha.css">  
+	<script>require("./js/captcha.js")</script>
+</head>
+<body>
+	<img id="captcha-back-img" src="./images/captcha-back.png"></img>
+
+	<div class="g-recaptcha" data-callback="sendToken" data-sitekey="" style="position: absolute;top: 50%;left: 50%;transform: translate(-50%, -50%);"></div>
+
+	<div id="btns-div-captcha">
+		<input id="captcha-name" class="captcha-btn" placeholder="Captcha Name"></input>
+		<button id="captcha-login" class="captcha-btn">Login To Google</button>
+		<button id="captcha-clear" class="captcha-btn">Clear Cache</button>
+	</div>
+
+</body>
+</html>
